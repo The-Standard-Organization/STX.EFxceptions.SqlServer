@@ -2,7 +2,7 @@
 // Copyright (c) The Standard Organization: A coalition of the Good-Hearted Engineers
 // ----------------------------------------------------------------------------------
 
-namespace STX.EFxceptions.Cosmos.Infrastructure.Build
+namespace STX.EFxceptions.SqlServer.Infrastructure.Build
 {
     using System.Collections.Generic;
     using System.IO;

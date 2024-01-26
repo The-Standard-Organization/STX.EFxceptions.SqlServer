@@ -15,7 +15,7 @@
 		<PackageProjectUrl>https://github.com/The-Standard-Organization/STX.EFxceptions</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/The-Standard-Organization/STX.EFxceptions</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>.NET; EF; Entity Framework; Exceptions; The Standard</PackageTags>
+		<PackageTags>.NET; EF; Entity Framework; Exceptions; SQL; SQL Server; The Standard</PackageTags>
 		<PackageReleaseNotes>
 			This beta release is a rewrite of the original EFxceptions library.
 		</PackageReleaseNotes>

@@ -24,10 +24,7 @@ We believe that everyone has the right to privacy, and will never do anything th
 We are committed to writing ethical and responsible software, and will always strive to use our skills, coding, and systems for the good.
 We believe that these beliefs will help to ensure that our software(s) are safe and secure and that it will never be used to harm or collect personal data for malicious purposes.
  
-The Standard Community as a promise to you is in upholding these values.
-
-## Current Outlook of the Project
-In the outset of this endeavor we plan to re-write the existing popular library RESTFulSense to enhance and bring current to modern Standard compliancy. 
+The Standard Community as a promise to you is in upholding these values. 
 
 ## Contact
 

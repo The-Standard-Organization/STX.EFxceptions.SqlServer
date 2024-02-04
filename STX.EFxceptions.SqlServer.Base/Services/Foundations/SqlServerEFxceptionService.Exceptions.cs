@@ -20,6 +20,8 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
                     throw new ForeignKeyConstraintConflictSqlException(message);
                 case 2601:
                     throw new DuplicateKeyWithUniqueIndexSqlException(message);
+                case 2627:
+                    throw new DuplicateKeySqlException(message);
             }
         }
     }

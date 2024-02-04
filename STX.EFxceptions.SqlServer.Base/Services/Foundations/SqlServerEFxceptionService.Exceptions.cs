@@ -18,6 +18,8 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
                     throw new InvalidObjectNameSqlException(message);
                 case 547:
                     throw new ForeignKeyConstraintConflictSqlException(message);
+                case 2601:
+                    throw new DuplicateKeyWithUniqueIndexSqlException(message);
             }
         }
     }

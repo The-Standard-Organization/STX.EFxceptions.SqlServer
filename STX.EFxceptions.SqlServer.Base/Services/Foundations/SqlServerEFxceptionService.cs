@@ -19,6 +19,7 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
         public void ThrowMeaningfulException(DbUpdateException dbUpdateException)
         {
             ValidateInnerException(dbUpdateException);
+            throw dbUpdateException;
         }
     }
 }

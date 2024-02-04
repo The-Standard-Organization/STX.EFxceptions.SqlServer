@@ -94,5 +94,26 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
             Assert.Throws<ForeignKeyConstraintConflictSqlException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
+        
+        [Fact]
+        public void ShouldThrowDuplicateKeyWithUniqueIndexSqlException()
+        { 
+            // given
+            int sqlDuplicateKeyWithUniqueIndexErrorCode = 2601;
+            string randomErrorMessage = CreateRandomErrorMessage();
+            SqlException duplicateKeyWithUniqueIndexException = CreateSqlException();
+
+            var dbUpdateException = new DbUpdateException(
+                message: randomErrorMessage,
+                innerException: duplicateKeyWithUniqueIndexException);
+
+            this.sqlServerErrorBrokerMock.Setup(broker =>
+                broker.GetErrorCode(duplicateKeyWithUniqueIndexException))    
+                    .Returns(sqlDuplicateKeyWithUniqueIndexErrorCode);
+
+            // when . then
+            Assert.Throws<DuplicateKeyWithUniqueIndexSqlException>(() =>
+                this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
+        }
     }
 }

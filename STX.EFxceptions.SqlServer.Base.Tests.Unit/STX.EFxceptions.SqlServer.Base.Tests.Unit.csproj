@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -23,6 +23,11 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\STX.EFxceptions.SqlServer.Base\STX.EFxceptions.SqlServer.Base.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="CleanMoq" Version="42.42.42" />
+		<PackageReference Include="Tynamix.ObjectFiller" Version="1.5.8" />
 	</ItemGroup>
 
 </Project>

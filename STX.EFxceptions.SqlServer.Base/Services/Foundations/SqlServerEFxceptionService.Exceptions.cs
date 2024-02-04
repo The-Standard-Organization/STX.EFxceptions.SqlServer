@@ -16,6 +16,8 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
                     throw new InvalidColumnNameSqlException(message);
                 case 208:
                     throw new InvalidObjectNameSqlException(message);
+                case 547:
+                    throw new ForeignKeyConstraintConflictSqlException(message);
             }
         }
     }

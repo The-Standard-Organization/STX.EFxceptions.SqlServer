@@ -14,6 +14,8 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
             {
                 case 207:
                     throw new InvalidColumnNameSqlException(message);
+                case 208:
+                    throw new InvalidObjectNameSqlException(message);
             }
         }
     }

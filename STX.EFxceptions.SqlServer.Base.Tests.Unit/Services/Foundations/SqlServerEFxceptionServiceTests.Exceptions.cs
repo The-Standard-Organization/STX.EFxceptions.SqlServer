@@ -80,14 +80,14 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
             // given
             int sqlForeignKeyConstraintConflictErrorCode = 547;
             string randomErrorMessage = CreateRandomErrorMessage();
-            SqlException ForeignKeyConstraintConflictException = CreateSqlException();
+            SqlException foreignKeyConstraintConflictException = CreateSqlException();
 
             var dbUpdateException = new DbUpdateException(
                 message: randomErrorMessage,
-                innerException: ForeignKeyConstraintConflictException);
+                innerException: foreignKeyConstraintConflictException);
 
             this.sqlServerErrorBrokerMock.Setup(broker =>
-                broker.GetErrorCode(ForeignKeyConstraintConflictException))    
+                broker.GetErrorCode(foreignKeyConstraintConflictException))    
                     .Returns(sqlForeignKeyConstraintConflictErrorCode);
 
             // when . then

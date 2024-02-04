@@ -9,7 +9,7 @@ using STX.EFxceptions.Interfaces.Brokers.DbErrorBroker;
 
 namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
 {
-    public class SqlServerEFxceptionService : ISqlServerEFxceptionService
+    public partial class SqlServerEFxceptionService : ISqlServerEFxceptionService
     {
         private IDbErrorBroker<SqlException> sqlServerErrorBroker;
 
@@ -18,7 +18,7 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
 
         public void ThrowMeaningfulException(DbUpdateException dbUpdateException)
         {
-            throw new NotImplementedException();
+            ValidateInnerException(dbUpdateException);
         }
     }
 }

@@ -4,6 +4,7 @@
 
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using STX.EFxceptions.SqlServer.Base.Models.Exceptions;
 using Xunit;
 
 namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
@@ -28,6 +29,27 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
 
             // when . then
             Assert.Throws<DbUpdateException>(() =>
+                this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
+        }
+        
+        [Fact]
+        public void ShouldThrowInvalidColumnNameSqlException()
+        {
+            // given
+            int sqlInvalidColumnNameErrorCode = 207;
+            string randomErrorMessage = CreateRandomErrorMessage();
+            SqlException invalidColumnNameException = CreateSqlException();
+
+            var dbUpdateException = new DbUpdateException(
+                message: randomErrorMessage,
+                innerException: invalidColumnNameException);
+
+            this.sqlServerErrorBrokerMock.Setup(broker =>
+                broker.GetErrorCode(invalidColumnNameException))
+                    .Returns(sqlInvalidColumnNameErrorCode);
+
+            // when . then
+            Assert.Throws<InvalidColumnNameSqlException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
     }

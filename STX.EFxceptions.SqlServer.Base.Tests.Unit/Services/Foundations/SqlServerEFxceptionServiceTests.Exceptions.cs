@@ -115,5 +115,26 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
             Assert.Throws<DuplicateKeyWithUniqueIndexSqlException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
+        
+        [Fact]
+        public void ShouldThrowDuplicateKeySqlException()
+        { 
+            // given
+            int sqlDuplicateKeyErrorCode = 2627;
+            string randomErrorMessage = CreateRandomErrorMessage();
+            SqlException DuplicateKeyException = CreateSqlException();
+
+            var dbUpdateException = new DbUpdateException(
+                message: randomErrorMessage,
+                innerException: DuplicateKeyException);
+
+            this.sqlServerErrorBrokerMock.Setup(broker =>
+                broker.GetErrorCode(DuplicateKeyException))    
+                    .Returns(sqlDuplicateKeyErrorCode);
+
+            // when . then
+            Assert.Throws<DuplicateKeySqlException>(() =>
+                this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
+        }
     }
 }

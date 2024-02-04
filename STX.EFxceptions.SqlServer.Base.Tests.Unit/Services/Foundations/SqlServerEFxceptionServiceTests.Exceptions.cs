@@ -66,11 +66,32 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                 innerException: invalidObjectNameException);
 
             this.sqlServerErrorBrokerMock.Setup(broker =>
-                broker.GetErrorCode(invalidObjectNameException))
+                broker.GetErrorCode(invalidObjectNameException))    
                     .Returns(sqlInvalidObjectNameErrorCode);
 
             // when . then
             Assert.Throws<InvalidObjectNameSqlException>(() =>
+                this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
+        }
+        
+        [Fact]
+        public void ShouldThrowForeignKeyConstraintConflictSqlException()
+        { 
+            // given
+            int sqlForeignKeyConstraintConflictErrorCode = 547;
+            string randomErrorMessage = CreateRandomErrorMessage();
+            SqlException ForeignKeyConstraintConflictException = CreateSqlException();
+
+            var dbUpdateException = new DbUpdateException(
+                message: randomErrorMessage,
+                innerException: ForeignKeyConstraintConflictException);
+
+            this.sqlServerErrorBrokerMock.Setup(broker =>
+                broker.GetErrorCode(ForeignKeyConstraintConflictException))    
+                    .Returns(sqlForeignKeyConstraintConflictErrorCode);
+
+            // when . then
+            Assert.Throws<ForeignKeyConstraintConflictSqlException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
     }

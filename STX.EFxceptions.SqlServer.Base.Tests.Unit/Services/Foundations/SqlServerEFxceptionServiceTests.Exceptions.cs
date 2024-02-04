@@ -52,5 +52,26 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
             Assert.Throws<InvalidColumnNameSqlException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
+        
+        [Fact]
+        public void ShouldThrowInvalidObjectNameSqlException()
+        { 
+            // given
+            int sqlInvalidObjectNameErrorCode = 208;
+            string randomErrorMessage = CreateRandomErrorMessage();
+            SqlException invalidObjectNameException = CreateSqlException();
+
+            var dbUpdateException = new DbUpdateException(
+                message: randomErrorMessage,
+                innerException: invalidObjectNameException);
+
+            this.sqlServerErrorBrokerMock.Setup(broker =>
+                broker.GetErrorCode(invalidObjectNameException))
+                    .Returns(sqlInvalidObjectNameErrorCode);
+
+            // when . then
+            Assert.Throws<InvalidObjectNameSqlException>(() =>
+                this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
+        }
     }
 }

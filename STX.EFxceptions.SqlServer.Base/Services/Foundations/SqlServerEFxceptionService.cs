@@ -19,7 +19,13 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
         public void ThrowMeaningfulException(DbUpdateException dbUpdateException)
         {
             ValidateInnerException(dbUpdateException);
+            SqlException sqlException = GetSqlException(dbUpdateException.InnerException);
+            int sqlErrorCode = this.sqlServerErrorBroker.GetErrorCode(sqlException);
+            ConvertAndThrowMeaningfulException(sqlErrorCode, sqlException.Message);
             throw dbUpdateException;
         }
+
+        private SqlException GetSqlException(Exception exception) =>
+            (SqlException)exception;
     }
 }

@@ -2,6 +2,7 @@
 // Copyright(c) The Standard Organization: A coalition of the Good-Hearted Engineers
 // --------------------------------------------------------------------------------
 
+using STX.EFxceptions.SqlServer.Base.Models.Exceptions;
 using STX.EFxceptions.SqlServer.Tests.Acceptance.Models.Clients;
 using System;
 using Xunit;
@@ -26,6 +27,38 @@ namespace STX.EFxceptions.SqlServer.Tests.Acceptance
             // then
             context.Clients.Remove(client);
             context.SaveChanges();
+        }
+
+        [Fact]
+        public void ShouldThrowDuplicateKeyExceptionOnSaveChanges()
+        {
+            // given
+            var client = new Client
+            {
+                Id = Guid.NewGuid()
+            };
+
+            // when . then
+            Assert.Throws<DuplicateKeySqlException>(() =>
+            {
+                try
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        context.Clients.Add(client);
+                        context.SaveChanges();
+                    }
+                }
+                catch (ArgumentException argumentException)
+                {
+                    throw new DuplicateKeySqlException(argumentException.Message);
+                }
+                finally
+                {
+                    context.Clients.Remove(client);
+                    context.SaveChanges();
+                }
+            });
         }
     }
 }

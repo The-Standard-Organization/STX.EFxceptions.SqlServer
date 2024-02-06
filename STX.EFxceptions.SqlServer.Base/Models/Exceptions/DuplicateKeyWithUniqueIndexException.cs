@@ -6,8 +6,8 @@ using System;
 
 namespace STX.EFxceptions.SqlServer.Base.Models.Exceptions
 {
-    public class DuplicateKeyWithUniqueIndexSqlException : Exception
+    public class DuplicateKeyWithUniqueIndexException : Exception
     {
-        public DuplicateKeyWithUniqueIndexSqlException(string message) : base(message) { }
+        public DuplicateKeyWithUniqueIndexException(string message) : base(message) { }
     }
 }

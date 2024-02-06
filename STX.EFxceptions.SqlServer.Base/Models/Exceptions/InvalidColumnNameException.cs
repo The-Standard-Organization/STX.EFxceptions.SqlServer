@@ -6,8 +6,8 @@ using System;
 
 namespace STX.EFxceptions.SqlServer.Base.Models.Exceptions
 {
-    public class InvalidObjectNameSqlException : Exception
+    public class InvalidColumnNameException : Exception
     {
-        public InvalidObjectNameSqlException(string message) : base(message) { }
+        public InvalidColumnNameException(string message) : base(message) { }
     }
 }

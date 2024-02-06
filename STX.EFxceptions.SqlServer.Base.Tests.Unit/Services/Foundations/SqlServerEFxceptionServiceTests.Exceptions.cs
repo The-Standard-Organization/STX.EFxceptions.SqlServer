@@ -49,7 +49,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                     .Returns(sqlInvalidColumnNameErrorCode);
 
             // when . then
-            Assert.Throws<InvalidColumnNameSqlException>(() =>
+            Assert.Throws<InvalidColumnNameException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
         
@@ -70,7 +70,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                     .Returns(sqlInvalidObjectNameErrorCode);
 
             // when . then
-            Assert.Throws<InvalidObjectNameSqlException>(() =>
+            Assert.Throws<InvalidObjectNameException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
         
@@ -91,7 +91,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                     .Returns(sqlForeignKeyConstraintConflictErrorCode);
 
             // when . then
-            Assert.Throws<ForeignKeyConstraintConflictSqlException>(() =>
+            Assert.Throws<ForeignKeyConstraintConflictException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
         
@@ -112,7 +112,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                     .Returns(sqlDuplicateKeyWithUniqueIndexErrorCode);
 
             // when . then
-            Assert.Throws<DuplicateKeyWithUniqueIndexSqlException>(() =>
+            Assert.Throws<DuplicateKeyWithUniqueIndexException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
         
@@ -133,7 +133,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                     .Returns(sqlDuplicateKeyErrorCode);
 
             // when . then
-            Assert.Throws<DuplicateKeySqlException>(() =>
+            Assert.Throws<DuplicateKeyException>(() =>
                 this.sqlServerEFxceptionService.ThrowMeaningfulException(dbUpdateException));
         }
     }

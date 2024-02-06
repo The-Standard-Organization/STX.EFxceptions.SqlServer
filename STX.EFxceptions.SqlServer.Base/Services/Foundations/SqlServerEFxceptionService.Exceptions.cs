@@ -13,15 +13,15 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
             switch (sqlErrorCode)
             {
                 case 207:
-                    throw new InvalidColumnNameSqlException(message);
+                    throw new InvalidColumnNameException(message);
                 case 208:
-                    throw new InvalidObjectNameSqlException(message);
+                    throw new InvalidObjectNameException(message);
                 case 547:
-                    throw new ForeignKeyConstraintConflictSqlException(message);
+                    throw new ForeignKeyConstraintConflictException(message);
                 case 2601:
-                    throw new DuplicateKeyWithUniqueIndexSqlException(message);
+                    throw new DuplicateKeyWithUniqueIndexException(message);
                 case 2627:
-                    throw new DuplicateKeySqlException(message);
+                    throw new DuplicateKeyException(message);
             }
         }
     }

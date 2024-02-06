@@ -6,8 +6,8 @@ using System;
 
 namespace STX.EFxceptions.SqlServer.Base.Models.Exceptions
 {
-    public class ForeignKeyConstraintConflictSqlException : Exception
+    public class ForeignKeyConstraintConflictException : Exception
     {
-        public ForeignKeyConstraintConflictSqlException(string message) : base(message) { } 
+        public ForeignKeyConstraintConflictException(string message) : base(message) { } 
     }
 }

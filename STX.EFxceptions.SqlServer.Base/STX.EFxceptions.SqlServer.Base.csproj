@@ -12,8 +12,8 @@
 		<Description>A Standardized .NET library that provides core functionality that is used by the SqlServer implementations of EFxceptions</Description>
 		<Copyright>The Standard Community 2024 (c)</Copyright>
 		<PackageIcon>EFxceptions.png</PackageIcon>
-		<PackageProjectUrl>https://github.com/The-Standard-Organization/STX.EFxceptions</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/The-Standard-Organization/STX.EFxceptions</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/The-Standard-Organization/STX.EFxceptions.SqlServer</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/The-Standard-Organization/STX.EFxceptions.SqlServer</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>.NET; EF; Entity Framework; Exceptions; SQL; SQL Server; The Standard</PackageTags>
 		<PackageReleaseNotes>

@@ -82,6 +82,22 @@ namespace STX.EFxceptions.SqlServer.Infrastructure.Build
                                 }
                             }
                         }
+                    },
+                    {
+                        "add_tag",
+                        new TagJob(
+                            runsOn: BuildMachines.UbuntuLatest,
+                            dependsOn: "build",
+                            projectRelativePath: "STX.EFxceptions.SqlServer/STX.EFxceptions.SqlServer.csproj",
+                            githubToken: "${{ secrets.PAT_FOR_TAGGING }}",
+                            branchName: branchName)
+                    },
+                    {
+                        "publish",
+                        new PublishJob(
+                            runsOn: BuildMachines.UbuntuLatest,
+                            dependsOn: "add_tag",
+                            nugetApiKey: "${{ secrets.NUGET_ACCESS }}")
                     }
                 }
             };

@@ -44,4 +44,13 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+	  <PackageReference Include="STX.EFxceptions.Core" Version="0.1.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\STX.EFxceptions.SqlServer.Base\STX.EFxceptions.SqlServer.Base.csproj" />
+	</ItemGroup>
+
 </Project>

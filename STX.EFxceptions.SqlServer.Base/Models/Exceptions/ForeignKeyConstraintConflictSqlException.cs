@@ -2,12 +2,12 @@
 // Copyright(c) The Standard Organization: A coalition of the Good-Hearted Engineers
 // ----------------------------------------------------------------------------------
 
-using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace STX.EFxceptions.SqlServer.Base.Models.Exceptions
 {
-    public class ForeignKeyConstraintConflictSqlException : Exception
+    public class ForeignKeyConstraintConflictSqlException : DbUpdateException
     {
-        public ForeignKeyConstraintConflictSqlException(string message) : base(message) { } 
+        public ForeignKeyConstraintConflictSqlException(string message) : base(message) { }
     }
 }

@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------------
 
 using Microsoft.Data.SqlClient;
-using STX.EFxceptions.Interfaces.Brokers.DbErrorBroker;
+using STX.EFxceptions.Abstractions.Brokers.DbErrorBroker;
 
 namespace STX.EFxceptions.SqlServer.Base.Brokers.DbErrorBroker
 {

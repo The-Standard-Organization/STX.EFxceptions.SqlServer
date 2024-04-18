@@ -5,7 +5,7 @@
 using System;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using STX.EFxceptions.Interfaces.Brokers.DbErrorBroker;
+using STX.EFxceptions.Abstractions.Brokers.DbErrorBroker;
 
 namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
 {

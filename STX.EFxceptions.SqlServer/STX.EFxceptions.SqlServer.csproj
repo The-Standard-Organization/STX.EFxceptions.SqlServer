@@ -44,4 +44,8 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="STX.EFxceptions.Abstractions" Version="0.1.6" />
+	</ItemGroup>
+
 </Project>

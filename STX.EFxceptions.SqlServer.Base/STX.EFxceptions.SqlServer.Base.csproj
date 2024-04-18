@@ -46,7 +46,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
-	  <PackageReference Include="STX.EFxceptions.Interfaces" Version="0.1.2" />
+	  <PackageReference Include="STX.EFxceptions.Abstractions" Version="0.1.6" />
 	</ItemGroup>
 
 </Project>

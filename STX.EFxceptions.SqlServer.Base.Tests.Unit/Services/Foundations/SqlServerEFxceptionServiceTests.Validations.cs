@@ -30,12 +30,12 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                 .BeEquivalentTo(
                 expectation: expectedDbUpdateException,
                 config: options => options
-                        .Excluding(ex => ex.TargetSite)
-                        .Excluding(ex => ex.StackTrace)
-                        .Excluding(ex => ex.Source)
-                        .Excluding(ex => ex.InnerException.TargetSite)
-                        .Excluding(ex => ex.InnerException.StackTrace)
-                        .Excluding(ex => ex.InnerException.Source));
+                    .Excluding(ex => ex.TargetSite)
+                    .Excluding(ex => ex.StackTrace)
+                    .Excluding(ex => ex.Source)
+                    .Excluding(ex => ex.InnerException.TargetSite)
+                    .Excluding(ex => ex.InnerException.StackTrace)
+                    .Excluding(ex => ex.InnerException.Source));
 
             this.sqlServerErrorBrokerMock.Verify(broker =>
                 broker.GetErrorCode(It.IsAny<SqlException>()),

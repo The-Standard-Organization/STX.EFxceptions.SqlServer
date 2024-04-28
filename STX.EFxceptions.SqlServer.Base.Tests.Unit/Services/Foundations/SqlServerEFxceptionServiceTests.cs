@@ -41,8 +41,8 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
                 messageField.SetValue(sqlException, message);
 
             FieldInfo errorCodeField = typeof(SqlException).GetField(
-                    name: "_errorCode",
-                    bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic);
+                name: "_errorCode",
+                bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic);
 
             if (errorCodeField != null)
                 errorCodeField.SetValue(sqlException, errorCode);

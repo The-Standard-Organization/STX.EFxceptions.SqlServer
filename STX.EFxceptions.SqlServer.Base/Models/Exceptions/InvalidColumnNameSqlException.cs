@@ -2,11 +2,12 @@
 // Copyright(c) The Standard Organization: A coalition of the Good-Hearted Engineers
 // ----------------------------------------------------------------------------------
 
-using Microsoft.Data.SqlClient;
-using STX.EFxceptions.Abstractions.Brokers.DbErrorBroker;
+using Microsoft.EntityFrameworkCore;
 
-namespace STX.EFxceptions.SqlServer.Base.Brokers.DbErrorBroker
+namespace STX.EFxceptions.SqlServer.Base.Models.Exceptions
 {
-    public interface ISqlServerErrorBroker : IDbErrorBroker<SqlException>
-    { }
+    public class InvalidColumnNameSqlException : DbUpdateException
+    {
+        public InvalidColumnNameSqlException(string message) : base(message) { }
+    }
 }

@@ -19,11 +19,11 @@ namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
             {
                 returningExceptionFunction();
             }
-            catch (InvalidColumnNameSqlException duplicateKeyCosmosException)
+            catch (InvalidColumnNameSqlException invalidColumnNameSqlException)
             {
                 throw new InvalidColumnNameException(
-                    message: duplicateKeyCosmosException.Message,
-                    innerException: duplicateKeyCosmosException);
+                    message: invalidColumnNameSqlException.Message,
+                    innerException: invalidColumnNameSqlException);
             }
             catch (InvalidObjectNameSqlException invalidObjectNameSqlException)
             {

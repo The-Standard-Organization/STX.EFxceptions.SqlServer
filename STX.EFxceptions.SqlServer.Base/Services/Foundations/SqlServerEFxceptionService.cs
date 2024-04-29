@@ -2,10 +2,10 @@
 // Copyright(c) The Standard Organization: A coalition of the Good-Hearted Engineers
 // ----------------------------------------------------------------------------------
 
+using System;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using STX.EFxceptions.Abstractions.Brokers.DbErrorBroker;
-using System;
 
 namespace STX.EFxceptions.SqlServer.Base.Services.Foundations
 {

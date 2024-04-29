@@ -47,7 +47,7 @@ namespace STX.EFxceptions.SqlServer.Base.Tests.Unit.Services.Foundations
             // then
             actualDbUpdateException.Should()
                 .BeEquivalentTo(
-                expectation: expectedDbUpdateException,
+                 expectation: expectedDbUpdateException,
                  config: options => options
                      .Excluding(ex => ex.TargetSite)
                      .Excluding(ex => ex.StackTrace)

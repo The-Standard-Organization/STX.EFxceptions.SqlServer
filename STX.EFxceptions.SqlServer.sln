@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STX.EFxceptions.Identity.Sq
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STX.EFxceptions.SqlServer.Infrastructure.Build", "STX.EFxceptions.SqlServer.Infrastructure.Build\STX.EFxceptions.SqlServer.Infrastructure.Build.csproj", "{59E60FA4-AA69-42B0-90E2-E94C0734735A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STX.EFxceptions.SqlServer.Base.Tests.Unit", "STX.EFxceptions.SqlServer.Base.Tests.Unit\STX.EFxceptions.SqlServer.Base.Tests.Unit.csproj", "{20BFC89D-61A4-4B23-AA7E-753E64FE399E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STX.EFxceptions.SqlServer.Base.Tests.Unit", "STX.EFxceptions.SqlServer.Base.Tests.Unit\STX.EFxceptions.SqlServer.Base.Tests.Unit.csproj", "{20BFC89D-61A4-4B23-AA7E-753E64FE399E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STX.EFxceptions.SqlServer.Tests.Unit", "STX.EFxceptions.SqlServer.Tests.Unit\STX.EFxceptions.SqlServer.Tests.Unit.csproj", "{87988594-E3D5-4825-8D58-A221C4059735}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STX.EFxceptions.SqlServer.Tests.Acceptance", "STX.EFxceptions.SqlServer.Tests.Acceptance\STX.EFxceptions.SqlServer.Tests.Acceptance.csproj", "{612CF6E8-F4AB-4149-8B14-CE6C9A610A38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STX.EFxceptions.Identity.SqlServer.Tests.Unit", "STX.EFxceptions.Identity.SqlServer.Tests.Unit\STX.EFxceptions.Identity.SqlServer.Tests.Unit.csproj", "{B7EF4F6F-D82A-4BE3-8B0B-61A8B95DA946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STX.EFxceptions.Identity.SqlServer.Tests.Acceptance", "STX.EFxceptions.Identity.SqlServer.Tests.Acceptance\STX.EFxceptions.Identity.SqlServer.Tests.Acceptance.csproj", "{FDCBA496-2B12-477D-9B68-C31F75B2D2CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +43,14 @@ Global
 		{20BFC89D-61A4-4B23-AA7E-753E64FE399E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20BFC89D-61A4-4B23-AA7E-753E64FE399E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20BFC89D-61A4-4B23-AA7E-753E64FE399E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87988594-E3D5-4825-8D58-A221C4059735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87988594-E3D5-4825-8D58-A221C4059735}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87988594-E3D5-4825-8D58-A221C4059735}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87988594-E3D5-4825-8D58-A221C4059735}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7EF4F6F-D82A-4BE3-8B0B-61A8B95DA946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7EF4F6F-D82A-4BE3-8B0B-61A8B95DA946}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7EF4F6F-D82A-4BE3-8B0B-61A8B95DA946}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7EF4F6F-D82A-4BE3-8B0B-61A8B95DA946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612CF6E8-F4AB-4149-8B14-CE6C9A610A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612CF6E8-F4AB-4149-8B14-CE6C9A610A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612CF6E8-F4AB-4149-8B14-CE6C9A610A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612CF6E8-F4AB-4149-8B14-CE6C9A610A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDCBA496-2B12-477D-9B68-C31F75B2D2CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDCBA496-2B12-477D-9B68-C31F75B2D2CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDCBA496-2B12-477D-9B68-C31F75B2D2CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDCBA496-2B12-477D-9B68-C31F75B2D2CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

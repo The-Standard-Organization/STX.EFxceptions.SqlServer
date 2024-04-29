@@ -3,6 +3,7 @@
 // --------------------------------------------------------------------------------
 
 using System;
+using STX.EFxceptions.Abstractions.Models.Exceptions;
 using STX.EFxceptions.SqlServer.Tests.Acceptance.Models.Clients;
 
 namespace STX.EFxceptions.SqlServer.Tests.Acceptance
@@ -25,6 +26,38 @@ namespace STX.EFxceptions.SqlServer.Tests.Acceptance
             // then
             context.Clients.Remove(client);
             context.SaveChanges();
+        }
+
+        [Fact]
+        public void ShouldThrowDuplicateKeyExceptionOnSaveChanges()
+        {
+            // given
+            var client = new Client
+            {
+                Id = Guid.NewGuid()
+            };
+
+            // when . then
+            Assert.Throws<DuplicateKeyException>(() =>
+            {
+                try
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        context.Clients.Add(client);
+                        context.SaveChanges();
+                    }
+                }
+                catch (ArgumentException argumentException)
+                {
+                    throw new DuplicateKeyException(argumentException.Message);
+                }
+                finally
+                {
+                    context.Clients.Remove(client);
+                    context.SaveChanges();
+                }
+            });
         }
     }
 }

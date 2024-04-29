@@ -12,6 +12,7 @@ namespace STX.EFxceptions.SqlServer.Tests.Acceptance
         public MyEFxceptionsContext(DbContextOptions<EFxceptionsContext> options)
             : base(options)
         { }
+        
         public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -17,6 +17,7 @@ namespace STX.EFxceptions.Identity.SqlServer.Tests.Acceptance
     {
         public MyEFxceptionsIdentityContext(DbContextOptions options) : base(options)
         { }
+        
         public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
